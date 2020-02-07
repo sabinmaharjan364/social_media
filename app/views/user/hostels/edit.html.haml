@@ -1,0 +1,9 @@
+.row.mt-3.mb-3
+  .col-12
+    %h2= @hostel.name
+
+    = form_for(@hostel, as: :hostel, url: user_hostel_path(@hostel), html: { multipart: true }) do |f|
+      = render partial: "form", locals: { f: f }
+
+      .form-group
+        = f.submit "Update", class: "btn btn-primary"

@@ -1,0 +1,19 @@
+.col-12
+  %h2= @hostel.name
+
+  .table-responsive
+    %table.table.table-striped.table-sm
+
+      %tr
+        %th #
+        %td= @hostel.id
+      %tr        
+        %th Name
+        %td= @hostel.name
+      %tr        
+        %th Description
+        %td= @hostel.description
+      %tr        
+        %th Image
+        %td= image_tag @hostel.avatar, class: "rounded", alt: "No Images", :height => "236", :width => "304"
+        

@@ -1,0 +1,28 @@
+= content_for(:title, "Hostels")
+
+.container
+  .row.mt-3.mb-3
+    .col-12.text-right
+      %a.btn.btn-sm.btn-outline-secondary{ href: new_user_hostel_path }
+        New
+  .row.mt-3.mb-3
+    .col-12
+      %h2 Hostels
+      .table-responsive
+        %table.table.table-striped.table-sm
+          %thead
+            %tr
+              %th ID
+              %th Name
+              %th Location
+              %th Facilities
+              %th Description
+              %th Action
+          %tbody
+            - @hostels.each do |hostel|
+              %tr
+                %td= hostel.id
+                %td= hostel.name
+                %td= hostel.location
+                %td= hostel.facilities
+                %td= hostel.description
