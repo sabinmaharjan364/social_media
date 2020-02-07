@@ -1,0 +1,10 @@
+.container
+  .row
+    - @hostels.each do |hostel|
+      .col-md-4
+        = image_tag hostel.avatar, :height => "236", :width => "304", class: "rounded"
+        %br
+        = link_to hostel.name, hostel_show_path(hostel)
+        %br
+        = truncate(hostel.description, :ommision => "... Read More", :length => 25)
+
