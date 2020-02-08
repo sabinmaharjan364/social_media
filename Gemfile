@@ -33,6 +33,7 @@ gem 'pry'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'carrierwave', '~> 2.0'
+gem 'searchkick'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

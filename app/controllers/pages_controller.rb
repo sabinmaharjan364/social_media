@@ -4,7 +4,13 @@ class PagesController < ApplicationController
   end
 
   def hostel
-    @hostels = Hostel.all
+    search = params[:query].present? ? params[:query] : nil
+    @hostels = if search
+      # Hostel.where("title LIKE ?", "%#{search}%")
+      Hostel.search search
+    else
+      Hostel.all
+    end
   end
 
   def show

@@ -1,3 +1,7 @@
+= form_for @hostels, :as => :company, :url => hostels_path, method: :get  do |f|
+  .form-group.search-hostel
+    = text_field_tag "query", "", { :placeholder => "Search  Hostels...", :id => "search_term" }
+    = f.submit "Search", class: "btn btn-primary"
 .container
   .row
     - @hostels.each do |hostel|
@@ -7,4 +11,7 @@
         = link_to hostel.name, hostel_show_path(hostel)
         %br
         = truncate(hostel.description, :ommision => "... Read More", :length => 25)
-
+:css
+  .search-hostel{
+    float: right;
+  }
