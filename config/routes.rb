@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   get "/hostels", to: "pages#hostel", as: :hostels
   # get "/search", to: "pages#search"
-  get "/hostel/:id", to: "pages#show", as: :hostel_show
+  # get "/hostel/:id", to: "pages#show", as: :hostel_show
+  resources :hostels do
+    resources :comments
+  end
   # get 'hostels/:query' => 'pages#search', as: :hostel_searches
 end

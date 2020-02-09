@@ -1,0 +1,19 @@
+- if @hostel.comments.count >= 1
+  .container
+    .row
+      %i
+        - @hostel.comments.each do |comment|
+          Comment added by:
+          = comment.commenter
+          %br
+          Comment:
+          = comment.comment
+          %br
+          Comment added on
+          = comment.created_at
+          %br
+          %br
+
+
+  %p Total Comments    
+  = @hostel.comments.count

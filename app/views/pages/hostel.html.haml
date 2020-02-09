@@ -1,17 +1,26 @@
-= form_for @hostels, :as => :company, :url => hostels_path, method: :get  do |f|
-  .form-group.search-hostel
-    = text_field_tag "query", "", { :placeholder => "Search  Hostels...", :id => "search_term" }
-    = f.submit "Search", class: "btn btn-primary"
+
 .container
   .row
+    .col-md-12
+      = form_for @hostels, :as => :company, :url => hostels_path, method: :get  do |f|
+        .form-group.search-hostel
+          = text_field_tag "query", "", { :placeholder => "Search  Hostels...", :id => "search_term" }
+          = f.submit "Search", class: "btn btn-dark"
     - @hostels.each do |hostel|
       .col-md-4
-        = image_tag hostel.avatar, :height => "236", :width => "304", class: "rounded"
+        = link_to hostel_path(hostel) do
+          = image_tag hostel.avatar, :height => "260", :width => "350", class: "rounded"
         %br
-        = link_to hostel.name, hostel_show_path(hostel)
+        = link_to hostel.name, hostel_path(hostel), class: "hostel-name"
         %br
         = truncate(hostel.description, :ommision => "... Read More", :length => 25)
+        %br        
+        = hostel.comments.count
+        comments
 :css
   .search-hostel{
     float: right;
+  }
+  .hostel-name {
+    color: hotpink
   }
