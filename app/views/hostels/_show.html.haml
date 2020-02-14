@@ -16,5 +16,8 @@
       %tr        
         %th Image
         %td= image_tag @hostel.avatar, class: "rounded", alt: "No Images", :height => "236", :width => "304"
+      %tr
+        %th Count
+        %td= @hostel.dashboard_count  
   = render "comments/form"
   = render "comments/show"

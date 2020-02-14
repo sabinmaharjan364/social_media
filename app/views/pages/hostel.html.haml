@@ -17,10 +17,19 @@
         %br        
         = hostel.comments.count
         comments
+        %br
+        .price
+          Rs.
+          = hostel.price
+          per month
 :css
   .search-hostel{
     float: right;
   }
   .hostel-name {
     color: hotpink
+  }
+  .price {
+    float: right;
+    margin-top: -69px;
   }
